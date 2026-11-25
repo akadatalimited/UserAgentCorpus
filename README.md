@@ -1,4 +1,4 @@
-# UserAgentCorpus — Proposed Expansion (PRIVATE DRAFT, NOT PUBLISHED)
+# UserAgentCorpus
 
 A deduplicated collection of **145,880** real-world HTTP `User-Agent`
 strings observed by services operated by AKADATA LIMITED.
@@ -7,25 +7,21 @@ This is a data collection, not a classification project. One string per
 record, nothing else. No IP addresses, timestamps, counts, attributions
 or other observation metadata are included.
 
-**Status: release-ready draft, private only. No publication yet.**
-
-## Contents (this directory, private draft)
+## Contents
 
 - `user-agents.csv` — single column (`user_agent`), 145,880 records + header.
   Alphabetically sorted A–Z (case-insensitive, deterministic tie-break),
   exact-string deduplicated, original capitalisation/punctuation/spacing
   preserved, UTF-8, LF line endings, RFC 4180 quoting.
 - `SHA256SUMS` — SHA-256 checksum of the CSV.
-- `README.md` (this file), `MANIFEST.json` — documentation and build manifest
-  (public-safe: no private infrastructure details).
+- `README.md` (this file), `MANIFEST.json` — documentation and build manifest.
 
 ## Origins
 
-- Original 53,809 records: [https://www.az2.co.uk/](https://www.az2.co.uk/), an
-  online shopping and product discovery platform, supplemented by our CVE
-  intelligence service ([https://cve.akadata.co.uk/](https://cve.akadata.co.uk/)).
-  The combined research drew upon more than twelve million HTTP traffic
-  observations (see published v1 README).
+- Original 53,809 records drew upon more than twelve million HTTP traffic
+  observations across our online shopping and product discovery platform
+  ([https://www.az2.co.uk/](https://www.az2.co.uk/)) and CVE intelligence
+  service ([https://cve.akadata.co.uk/](https://cve.akadata.co.uk/)).
 - Expansion +92,071 records: further historical acquisition across production
   services operated by AKADATA LIMITED, on the order of tens of millions of
   additional HTTP observations. No per-request metadata is published.
@@ -48,15 +44,14 @@ The dataset does not claim to identify every User-Agent in existence.
 
 ## Privacy
 
-Each string was audited before proposal. Records containing internal
+Each string was audited before publication. Records containing internal
 operational strings, template placeholders, control characters, personal
 email addresses, credentials or tokens, MAC addresses, long digit runs,
 IP addresses, private hostnames, spreadsheet formula triggers or
-overlong values were excluded entirely — never modified. Full exclusion
-accounting (1,476 candidates) is retained privately and was verified to
-contribute zero records to this CSV. No traffic counts, timestamps, IP
-addresses, geographical information, source attribution or other metadata
-is published. A small number of bot operator contact addresses remain
+overlong values were excluded entirely — never modified. 1,476 candidates
+were excluded under these rules and verified to contribute zero records to
+this CSV. No traffic counts, timestamps, IP addresses, geographical
+information, source attribution or other metadata is published. A small number of bot operator contact addresses remain
 exactly as their operators publish them inside their own User-Agent
 strings (as in v1); no personal data was found in the collection.
 
@@ -65,7 +60,7 @@ strings (as in v1); no personal data was found in the collection.
 Software development, HTTP parser testing, security research, traffic
 analysis and machine learning.
 
-## Licence (proposed)
+## Licence
 
 - `user-agents.csv` and `SHA256SUMS` — To the extent AKADATA LIMITED holds
   any copyright or database rights in the selection and arrangement of this
@@ -77,7 +72,7 @@ analysis and machine learning.
   with their respective owners.
 - `README.md` — MIT, Copyright (c) 2026 AKADATA LIMITED.
 
-## Verification (private)
+## Verification
 
 ```sh
 sha256sum -c SHA256SUMS
@@ -88,4 +83,4 @@ Expected: `user-agents.csv: OK`
 
 ---
 
-AKADATA LIMITED — Proudly Made in England. (Private draft.)
+AKADATA LIMITED — Proudly Made in England.
